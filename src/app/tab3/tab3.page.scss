@@ -1,0 +1,26 @@
+ion-avatar {
+  width: 35px;
+  height: 35px;
+}
+.tool {
+  margin: 10px;
+}
+ion-toolbar {
+  --border-style: none;
+}
+
+ion-header {
+  background: #fff;
+}
+
+ion-segment {
+  z-index: 10;
+  background: #fff;
+}
+
+-ion-segment-button {
+  text-transform: none;
+}
+p {
+  padding: 5px;
+}

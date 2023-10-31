@@ -1,3 +1,85 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-router-outlet>
+    <ion-menu menuId="first-menu" contentId="main-content">
+
+
+      <ion-content class="ion-padding">
+        <ion-item lines="none">
+          <ion-buttons slot="start">
+            <ion-button>
+              <ion-avatar>
+                <img
+                  src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400">
+              </ion-avatar>
+            </ion-button>
+          </ion-buttons>
+          <ion-icon slot="end" name="ellipsis-vertical-outline"></ion-icon>
+        </ion-item>
+
+        <ion-item>
+          <p><b>Jhon Wick</b><br> @johnwick <br><br><b>743</b> Takip edilen <b>1029</b> Takipçi</p>
+        </ion-item>
+
+        <ion-list class="profil-item">
+
+          <ion-item lines="none">
+            <ion-icon name="person-outline" slot="start">
+            </ion-icon>
+            Profil
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-icon name="logo-twitter" slot="start">
+            </ion-icon>
+            Premium
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-icon name="bookmark-outline" slot="start">
+            </ion-icon>
+            Kaydedilenler
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-icon name="list" slot="start">
+            </ion-icon>
+            Listeler
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="cash-outline" slot="start">
+            </ion-icon>
+            Gelire dönüştürme
+          </ion-item>
+
+          <ion-item lines="none" class="acc-item">
+
+            <ion-accordion-group>
+              <ion-accordion value="first">
+                <ion-item slot="header" color="white" lines="none">
+                  <ion-label>Profesyonel Araçlar</ion-label>
+                </ion-item>
+                <div class="ion-padding" slot="content">Reklamlar</div>
+              </ion-accordion>
+              <ion-accordion value="second">
+                <ion-item slot="header" color="white">
+                  <ion-label>Ayarlar&Destek</ion-label>
+                </ion-item>
+                <div class="ion-padding" slot="content">Ayarlar ve gizlilik</div>
+                <div class="ion-padding" slot="content">Yardım Merkezi </div>
+              </ion-accordion>
+
+            </ion-accordion-group>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+
+    <div class="ion-page" id="main-content">
+
+    </div>
+
+
+  </ion-router-outlet>
 </ion-app>

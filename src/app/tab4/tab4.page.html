@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar class="tool">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-avatar>
+          <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400">
+        </ion-avatar>
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar placeholder="Direkt Mesajlarda Ara" [debounce]="1000"
+      (ionInput)="handleInput($event)"></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="message-list">
+
+    <ion-list lines="none">
+
+      <ion-item *ngFor="let result of results"> <ion-buttons slot="start">
+          <ion-button>
+            <ion-avatar>
+              <img
+                src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400">
+            </ion-avatar>
+          </ion-button>
+        </ion-buttons>
+        <ion-label>{{ result }} <span style="opacity: 0.5; font-size: small  ;"> @busra · 20 Eki</span>
+          <p>Hi! Long time no see...</p>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+
+<ion-buttons>
+  <ion-button class="msg-btn">
+    <ion-icon name="mail" color="primary" size="large"></ion-icon>
+  </ion-button>
+</ion-buttons>

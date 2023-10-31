@@ -1,17 +1,64 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-menu-button color="primary" slot="start">
+          </ion-menu-button>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-button expand="block" (click)="openFirstMenu()">Open First Menu</ion-button>
+      </ion-content>
+    </div> -->
+<div class="ion-page" id="main-content">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header #header>
+
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-buttons>
+        <ion-menu-button>
+          <ion-avatar>
+            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400">
+          </ion-avatar>
+        </ion-menu-button>
+      </ion-buttons>
+
+      <ion-title style="text-align: center;">
+        <ion-icon name="logo-twitter" color="primary" size="large"></ion-icon>
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="icon-only" name="pulse-outline" color="primary"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+  <ion-content [fullscreen]="true" scrollEvents="true" [appHideHeader]="header" [appStickySegment]="segmentControl">
+
+    <ion-segment [(ngModel)]="segment" mode="md" #segmentControl>
+      <ion-segment-button value="home">
+        <ion-label>Sana Özel</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="content">
+        <ion-label>Takip edilenler</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <swiper-container #swiper [loop]="true " [slidesPerView]="4.5" [slidesOffsetBefore]="10" [spaceBetween]="0">
+      <swiper-slide *ngFor="let tweet of tweets">
+        <ion-avatar>
+          <img [src]="tweet.img">
+        </ion-avatar>
+      </swiper-slide>
+    </swiper-container>
+
+    <div *ngIf="segment == 'home'">
+      <app-tweet *ngFor="let tweet of tweets" [tweet]="tweet"></app-tweet>
+    </div>
+
+    <div *ngIf="segment == 'content'">
+      <app-tweet *ngFor="let tweet of tweets" [tweet]="tweet"></app-tweet>
+    </div>
+
+  </ion-content>
+</div>
